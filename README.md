@@ -44,9 +44,9 @@ In controller :
 ```php
 $fastShow = $this->get('acseo_fast_show_generator.driver.annotation');
 
-$fastShow->setEntity($entity);
+$fastShow->setEntity(new MyEntity());
 $fastShow->setGroup('default');
-$fastShow->setClassMetadata($em->getClassMetadata($this->getEntityName()));
+$fastShow->setClassMetadata($em->getClassMetadata("ACSEOMyBundle:MyEntity"));
 
 $fastShowData = $fastShow->getShowableData();
 ```
