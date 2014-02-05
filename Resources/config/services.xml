@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="acseo_fast_show_generator.driver.annotation" class="ACSEO\Bundle\FastShowGeneratorBundle\Annotations\Driver\Annotation">
+            <argument type="service" id="annotation_reader" />
+        </service>
+
+        <service id="acseo_fast_show_generator.driver.yaml" class="ACSEO\Bundle\FastShowGeneratorBundle\Annotations\Driver\Yaml">
+            <argument type="service" id="kernel" />
+        </service>
+    </services>
+</container>
