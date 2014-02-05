@@ -1,5 +1,8 @@
+ACSEOFastShowGeneratorBundle 
+----------------------------
+
 ACSEOFastShowGeneratorBundle allows to quickly generate show actions based on annotation or yaml
-This bundle was initiated by Nicolas Kern (ACSEO).
+This bundle was initiated by Nicolas Kern ([ACSEO](http://www.acseo-conseil.fr)).
 
 **Version**: 2.3-dev  
 **Compatibility**: Symfony >= 2.0.0, Twig >= 1.5.0
@@ -32,7 +35,7 @@ Composer will install the bundle to your project's `vendor/ACSEO` directory.
 
 In entity :
 ```php
-use ACSEO\Bundle\FastShowGeneratorBundle\Annotations as ACSEOFastShowGeneratorBundle;
+use ACSEO\FastShowGeneratorBundle\Annotations as ACSEOFastShowGeneratorBundle;
 ```
 
 For each property :
@@ -55,7 +58,7 @@ $fastShowData = $fastShow->getShowableData();
 
 Create the a file in your bundle for each entity :
 ```js
-<!-- ACSEO/Bundle/MyBundle/Resources/config/fastshowgenerator/MyEntity.default.fastshowgenerator.yml -->
+#ACSEO/Bundle/MyBundle/Resources/config/fastshowgenerator/MyEntity.default.fastshowgenerator.yml
 
 ACSEO\Bundle\MyBundle\Entity\MyEntity:
     Columns:

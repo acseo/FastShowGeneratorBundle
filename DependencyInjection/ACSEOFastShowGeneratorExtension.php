@@ -1,6 +1,6 @@
 <?php
 
-namespace ACSEO\Bundle\FastShowGeneratorBundle\DependencyInjection;
+namespace ACSEO\FastShowGeneratorBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
