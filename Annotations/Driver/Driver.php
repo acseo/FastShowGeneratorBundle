@@ -1,6 +1,6 @@
 <?php
 
-namespace ACSEO\Bundle\FastShowGeneratorBundle\Annotations\Driver;
+namespace ACSEO\FastShowGeneratorBundle\Annotations\Driver;
  
 class Driver
 {

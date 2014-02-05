@@ -1,6 +1,6 @@
 <?php
 
-namespace ACSEO\Bundle\FastShowGeneratorBundle;
+namespace ACSEO\FastShowGeneratorBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

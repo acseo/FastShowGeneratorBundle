@@ -1,6 +1,6 @@
 <?php
 
-namespace ACSEO\Bundle\FastShowGeneratorBundle\Annotations;
+namespace ACSEO\FastShowGeneratorBundle\Annotations;
  
 /**
  * @Annotation

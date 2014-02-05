@@ -1,6 +1,6 @@
 <?php
 
-namespace ACSEO\Bundle\FastShowGeneratorBundle\Annotations\Driver;
+namespace ACSEO\FastShowGeneratorBundle\Annotations\Driver;
  
 use Doctrine\Common\Annotations\Reader;
 
@@ -22,7 +22,7 @@ class Annotation extends Driver
         $data = array();
 
         foreach ($reflectionClass->getProperties() as $property) {
-            $propertyAnnotation = $this->reader->getPropertyAnnotation($property, 'ACSEO\Bundle\FastShowGeneratorBundle\Annotations\Show');
+            $propertyAnnotation = $this->reader->getPropertyAnnotation($property, 'ACSEO\FastShowGeneratorBundle\Annotations\Show');
 
             if (null != $propertyAnnotation) {
                 $propertyAnnotationOptions = $propertyAnnotation->getOptions();

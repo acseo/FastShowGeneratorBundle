@@ -35,7 +35,7 @@ Composer will install the bundle to your project's `vendor/ACSEO` directory.
 
 In entity :
 ```php
-use ACSEO\Bundle\FastShowGeneratorBundle\Annotations as ACSEOFastShowGeneratorBundle;
+use ACSEO\FastShowGeneratorBundle\Annotations as ACSEOFastShowGeneratorBundle;
 ```
 
 For each property :
