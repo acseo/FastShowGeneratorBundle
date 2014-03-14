@@ -1,7 +1,10 @@
 <?php
 
 namespace ACSEO\FastShowGeneratorBundle\Annotations\Driver;
- 
+
+use Symfony\Component\Yaml\Parser;
+use Symfony\Component\Yaml\Exception\ParseException;
+
 class Yaml extends Driver
 {
     private $reader;
@@ -56,15 +59,42 @@ class Yaml extends Driver
      */
     private function locateYamlFile($instance) {
         $fileToLocate = sprintf(
-            "@%s/Resources/config/fastshowgenerator/%s.%s.fastshowgenerator.yml", $this->getBundleNameForClass($instance->getName()), basename($instance->getFileName(), ".php"), $this->group
+            "@%s/Resources/config/fastshow/%s.%s.yml", $this->getBundleNameForClass($instance->getName()), basename($instance->getFileName(), ".php"), $this->group
         );
 
         try {
             return $this->kernel->locateResource($fileToLocate);
         }
         catch (\Exception $e) {
+            throw $e;
             // The exception is silent
             return false;
         }
     }
+
+    /**
+     * Get The Bundle Name of an entity class
+     * @param String an entity namespace
+     * @return the Bundle name of the entity
+     */
+    private function getBundleNameForClass($rootEntityName) {
+        $bundles = $this->kernel->getBundles();
+        $bundleName = null;
+
+        foreach($bundles as $type => $bundle){
+            $className = get_class($bundle);
+
+            $entityClass = substr($rootEntityName,0,strpos($rootEntityName,'\\Entity\\'));
+
+            if(strpos($className,$entityClass) !== FALSE){
+                $bundleName = $type;
+            }
+        }
+
+        if (null === $bundleName) {
+            throw new \Exception(sprintf("Bundle was not found for entity %s, maybe you should declare it in AppKernel", $rootEntityName));
+        }
+
+        return $bundleName;
+    }    
 }
