@@ -3,12 +3,9 @@
 namespace ACSEO\FastShowGeneratorBundle\Annotations\Driver;
 
 use Symfony\Component\Yaml\Parser;
-use Symfony\Component\Yaml\Exception\ParseException;
 
 class Yaml extends Driver
 {
-    private $reader;
-    
     public function __construct($kernel)
     {
         $this->kernel = $kernel;
@@ -41,14 +38,14 @@ class Yaml extends Driver
      * @return array the parsed YAML file
      */
     private function getYamlContent($instance)
-    {       
+    {
         $content = false;
 
         if ($yamlFile = $this->locateYamlFile($instance)) {
             $yamlParser = new Parser();
             $content = $yamlParser->parse(file_get_contents($yamlFile));
         }
-        
+
         return $content;
     }
 
@@ -96,5 +93,5 @@ class Yaml extends Driver
         }
 
         return $bundleName;
-    }    
+    }
 }

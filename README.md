@@ -1,37 +1,23 @@
-ACSEOFastShowGeneratorBundle 
+ACSEOFastShowGeneratorBundle
 ----------------------------
 
 ACSEOFastShowGeneratorBundle allows to quickly generate show actions based on annotation or yaml
 This bundle was initiated by Nicolas Kern ([ACSEO](http://www.acseo-conseil.fr)).
 
-**Version**: 2.3-dev  
-**Compatibility**: Symfony >= 2.0.0, Twig >= 1.5.0
+**Version**: 2.0
+**Compatibility**: Symfony ^5.0, Twig >= 1.5.0
 
 ## Installation using Composer
 
-Add the bundle in your composer.json:
-
-```js
-{
-    "require": {
-        "acseo/fast-show-generator-bundle": "dev-master"
-    }
-}
-```
-
-Now tell composer to download the bundle by running the command:
-
 ``` bash
-$ php composer.phar update acseo/fast-show-generator-bundle
+$ composer install acseo/fast-show-generator-bundle
 ```
 
 Composer will install the bundle to your project's `vendor/ACSEO` directory.
 
-
 ## How To Use
 
 #### Annotation
-
 
 In entity :
 ```php
@@ -86,7 +72,6 @@ In controller :
     label : string - optional - if not set, uses the property name capitalized
     show : boolean - optional - if not set, value is assumed to be true
     groups : array - optional - if not set, group name is "default"
-
 
 ## Template
 
