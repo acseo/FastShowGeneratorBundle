@@ -5,7 +5,7 @@ ACSEOFastShowGeneratorBundle allows to quickly generate show actions based on an
 This bundle was initiated by Nicolas Kern ([ACSEO](http://www.acseo-conseil.fr)).
 
 **Version**: 2.0
-**Compatibility**: Symfony ^5.0, Twig >= 1.5.0
+**Compatibility**: Symfony ^5.0 || ^6.0
 
 ## Installation using Composer
 
